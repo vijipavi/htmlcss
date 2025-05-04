@@ -1,0 +1,338 @@
+/* === Modern CSS Variables === */
+:root {
+    --primary: #6c5ce7;
+    --secondary: #a29bfe;
+    --accent: #fd79a8;
+    --success: #00b894;
+    --warning: #fdcb6e;
+    --dark: #2d3436;
+    --light: #f5f6fa;
+    --text: #636e72;
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* === Base Styles === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1,h2,h3,h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--dark);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    background: linear-gradient(90deg,var(--primary,),var(--accent));
+    background-clip: text;
+    color: transparent;
+}
+
+.section-header p {
+    max-width: 700px;
+    margin: 0  auto;
+    font-size: 1.1rem;
+}
+
+/* === Blog Card Grid === */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+/* === Card Style 1: Modern Minimal === */
+.blog-card-1 {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: var(--transition);
+}
+
+.blog-card-1:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-image-1{
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-image-1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.blog-card-1:hover .card-image-1 img {
+    transform: scale(1.1);
+}
+
+.card-content-1 {
+    padding: 25px;
+}
+
+.card-category-1 {
+    display: inline-block;
+    padding: 5px 12px;
+    background-color: var(--secondary);
+    color: white;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+
+.card-title-1 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    transition: var(--transition);
+}
+
+.blog-card-1:hover .card-title-1 {
+    color: var(--primary);
+}
+
+.card-expect-1 {
+    color: var(--text);
+    margin-bottom: 20px;
+}
+
+.card-meta-1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 20px;
+}
+
+.card-meta-1 span {
+    display: flex;
+    align-items: center;
+}
+
+.card-meta-1 i {
+    margin-right: 5px;
+}
+
+.read-more-1 {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.read-more-1  i {
+    margin-left: 8px;
+    transition: var(--transition);
+}
+
+.blog-card-1:hover .read-more-1 {
+    color: var(--accent);
+}
+
+.blog-card-1:hover .read-more-1 i {
+    transform: translateX(5px);
+}
+
+/* === Card Style 2: Glassmorphism === */
+.blog-card-2 {
+    background-color: rgba(255,255,255,0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.18);
+    transition: var(--transition);
+}
+
+.blog-card-2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-image-2 {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-image-2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.blog-card-2:hover .card-image-2 img {
+    transform: scale(1.05);
+}
+
+.card-date-2 {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: rgba(0,0,0,0.7);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    backdrop-filter: blur(5px);
+}
+
+.card-content-2 {
+    padding: 25px;
+}
+
+.card-title-2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.card-expect-2 {
+    color: var(--text);
+    margin-bottom: 25px;
+}
+
+.read-more-2 {
+    display: inline-block;
+    padding: 10px 25px;
+    background: linear-gradient(90deg,var(--primary),var(--accent));
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgab(108, 92, 231,0.3);
+    margin-top: 5px;
+}
+
+.read-more-2:hover {
+    transform: translateY(-3px);
+    box-shadow:  0 8px 25px rgba(108, 92, 231, 0.4);
+}
+
+/* === Card Style 3: Neumorphism === */
+.blog-card-3 {
+    background-color: var(--light);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 8px 8px 16px #fff;
+    transform: var(--transition);
+    transition: var(--transition);
+}
+
+.blog-card-3:hover {
+    transform: translateY(-5px);
+    box-shadow: 12px 12px 24px #d1d1d1,
+                -12px -12px 24px #fff;
+}
+
+.card-image-3 {
+    height: 180px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 10px #d9d9d9, 
+    -5px -5px 10px #ffffff;
+}
+
+.card-image-3 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.blog-card-3:hover .card-image-3 img {
+    transform: scale(1.05);
+}
+
+.card-category-3 {
+    display: inline-block;
+    padding: 5px 12px;
+    background: var(--light);
+    color: var(--primary);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    box-shadow: inset 3px 3px 6px #d9d9d9, 
+    inset -3px -3px 6px #ffffff;
+}
+
+.card-title-3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.card-expect-3 {
+    color: var(--text);
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+.read-more-3 {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.read-more-3 i {
+    margin-left: 8px;
+    transition: var(--transition);
+}
+
+.read-more-3:hover {
+    color: var(--accent);
+}
+
+.read-more-3:hover i {
+    transform: translateX(5px);
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+}
+
